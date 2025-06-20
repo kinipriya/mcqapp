@@ -1,0 +1,10 @@
+import { supabase } from '../supabaseClient'
+
+export default function LogoutButton() {
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    alert('Logged out!')
+  }
+
+  return <button onClick={handleLogout}>Logout</button>
+}
